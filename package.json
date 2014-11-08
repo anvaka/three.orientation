@@ -1,0 +1,20 @@
+{
+  "name": "three.orientation",
+  "version": "1.0.0",
+  "description": "Control three.js camera with device orientation API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "three.js",
+    "camera",
+    "3d"
+  ],
+  "author": "Andrei Kashcha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anvaka/three.orientation"
+  }
+}
