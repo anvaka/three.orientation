@@ -18,7 +18,7 @@ function orientationControl(object) {
 
   object.rotation.reorder("YXZ");
 
-  var freeze = true;
+  var enabled = false;
   var deviceOrientation = {};
   var screenOrientation = 0;
 
@@ -41,17 +41,17 @@ function orientationControl(object) {
     window.addEventListener('orientationchange', onScreenOrientationChangeEvent, false);
     window.addEventListener('deviceorientation', onDeviceOrientationChangeEvent, false);
 
-    freeze = false;
+    enabled = true;
   }
 
   function disconnect() {
-    freeze = true;
+    enabled = false;
     window.removeEventListener('orientationchange', onScreenOrientationChangeEvent, false);
     window.removeEventListener('deviceorientation', onDeviceOrientationChangeEvent, false);
   }
 
   function update() {
-    if (freeze) return;
+    if (!enabled) return;
 
     var alpha = deviceOrientation.alpha ? THREE.Math.degToRad(deviceOrientation.alpha) : 0; // Z
     var beta = deviceOrientation.beta ? THREE.Math.degToRad(deviceOrientation.beta) : 0; // X'
