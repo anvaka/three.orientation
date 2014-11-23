@@ -14,6 +14,11 @@
 
 module.exports = orientationControl;
 
+var degreeToRadiansFactor = Math.PI / 180;
+function degToRad(degrees) {
+  return degrees * degreeToRadiansFactor;
+}
+
 function orientationControl(object) {
 
   object.rotation.reorder("YXZ");
@@ -53,10 +58,10 @@ function orientationControl(object) {
   function update() {
     if (!enabled) return;
 
-    var alpha = deviceOrientation.alpha ? THREE.Math.degToRad(deviceOrientation.alpha) : 0; // Z
-    var beta = deviceOrientation.beta ? THREE.Math.degToRad(deviceOrientation.beta) : 0; // X'
-    var gamma = deviceOrientation.gamma ? THREE.Math.degToRad(deviceOrientation.gamma) : 0; // Y''
-    var orient = screenOrientation ? THREE.Math.degToRad(screenOrientation) : 0; // O
+    var alpha = deviceOrientation.alpha ? degToRad(deviceOrientation.alpha) : 0; // Z
+    var beta = deviceOrientation.beta ? degToRad(deviceOrientation.beta) : 0; // X'
+    var gamma = deviceOrientation.gamma ? degToRad(deviceOrientation.gamma) : 0; // Y''
+    var orient = screenOrientation ? degToRad(screenOrientation) : 0; // O
 
     setObjectQuaternion(object.quaternion, alpha, beta, gamma, orient);
   }
