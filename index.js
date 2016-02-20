@@ -1,4 +1,4 @@
-/* global: THREE, window */
+/* globals THREE, window */
 /**
  * @author richt / http://richt.me
  * @author WestLangley / http://github.com/WestLangley
