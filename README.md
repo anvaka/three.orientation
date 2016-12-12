@@ -9,7 +9,7 @@ Control three.js camera with device orientation API
 var orientationControl = require('three.orientation')(camera);
 
 // somewhere inside request animation frame:
-orientationContorl.update();
+orientationControl.update();
 ```
 
 This module depends on `THREE.js` being in a global scope
