@@ -1,6 +1,6 @@
 {
   "name": "three.orientation",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Control three.js camera with device orientation API",
   "main": "index.js",
   "scripts": {
